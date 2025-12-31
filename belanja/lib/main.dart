@@ -1,0 +1,33 @@
+import 'package:flutter/material.dart';
+import 'pages/home_page.dart';
+import 'pages/item_page.dart';
+
+void main() {
+  runApp(const BelanjaApp());
+}
+
+class BelanjaApp extends StatelessWidget {
+    const BelanjaApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Contoh Navigasi Belanja',
+      debugShowCheckedModeBanner: false,
+
+      // halaman pertama yang dibuka
+      initialRoute: '/',
+
+      // daftar route
+      routes: {
+        '/': (context) => HomePage(),
+        '/item': (context) => const ItemPage(),
+      },
+
+      theme: ThemeData(
+        colorSchemeSeed: Colors.teal,
+        useMaterial3: true,
+      ),
+    );
+  }
+}
